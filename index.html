@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katrina O'Rell — Product Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#F2F6F6;
+    --card:#FFFFFF;
+    --header:#16283A;        /* deep navy band */
+    --header-text:#EAF1F4;
+    --text:#22303C;
+    --text-soft:#4C5B69;
+    --accent:#136A72;
+    --accent-ink:#0D4A50;
+    --line:#DCE5E6;
+    --tag-bg:#EAF2F2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--page);
+    color:var(--text);
+    font-family:'Public Sans',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+  }
+  a{color:var(--accent-ink);text-decoration-thickness:1.5px;text-underline-offset:3px}
+  a:hover{color:var(--accent)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  .serif{font-family:'Source Serif 4',Georgia,serif}
+
+  /* ── Header band ─────────────────────── */
+  header{background:var(--header);color:var(--header-text);padding:72px 0 56px}
+  header h1{font-family:'Source Serif 4',Georgia,serif;font-size:2.5rem;font-weight:700;letter-spacing:-.01em;color:#fff}
+  .title{color:#8FD4CE;font-weight:600;margin-top:6px;font-size:1.05rem}
+  .intro{margin-top:22px;max-width:60ch;color:var(--header-text);opacity:.92}
+  .header-links{margin-top:28px;font-weight:600;font-size:.95rem}
+  .header-links a{color:#fff;margin-right:26px;text-decoration-color:#8FD4CE}
+  .header-links a:hover{color:#8FD4CE}
+
+  /* ── Sections ────────────────────────── */
+  section{padding:56px 0}
+  h2{font-family:'Source Serif 4',Georgia,serif;font-size:1.6rem;font-weight:700;margin-bottom:6px}
+  .section-note{color:var(--text-soft);font-size:.95rem;margin-bottom:28px}
+
+  /* ── Project cards ───────────────────── */
+  .project{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-top:4px solid var(--accent);
+    border-radius:8px;
+    padding:30px 32px;
+    margin-bottom:26px;
+    box-shadow:0 1px 3px rgba(22,40,58,.06);
+  }
+  .project-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+  h3{font-family:'Source Serif 4',Georgia,serif;font-size:1.35rem;font-weight:700}
+  .status{
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--accent-ink);
+    background:var(--tag-bg);border:1px solid var(--line);
+    padding:3px 10px;border-radius:99px;white-space:nowrap;
+  }
+  .project > p{color:var(--text-soft);max-width:66ch;margin-bottom:14px}
+  .highlights{margin:0 0 16px 0;padding-left:20px;color:var(--text-soft)}
+  .highlights li{margin-bottom:7px;max-width:62ch}
+  .highlights li::marker{color:var(--accent)}
+  .stack{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent-ink);margin-bottom:14px}
+  .project-links{font-size:.95rem;font-weight:600}
+  .project-links a{margin-right:22px}
+  .shot{
+    margin-top:18px;border:1px solid var(--line);border-radius:6px;
+    aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;
+    color:var(--text-soft);font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    background:var(--page);
+  }
+  .shot-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .shot-pair .shot{margin-top:0;aspect-ratio:16/8}
+  .shot-tall{aspect-ratio:16/10}
+  @media(max-width:560px){.shot-pair{grid-template-columns:1fr}}
+  .shot img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+
+  /* ── About / footer ──────────────────── */
+  .about-card{
+    background:var(--card);border:1px solid var(--line);border-radius:8px;
+    padding:30px 32px;box-shadow:0 1px 3px rgba(22,40,58,.06);
+  }
+  .about-card p{color:var(--text-soft);max-width:66ch;margin-bottom:12px}
+  .about-card p:last-child{margin-bottom:0}
+
+  footer{background:var(--header);color:var(--header-text);padding:34px 0;margin-top:24px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.95rem}
+  footer a{color:#fff;text-decoration-color:#8FD4CE}
+
+  @media(max-width:560px){
+    header{padding:48px 0 40px}
+    header h1{font-size:1.9rem}
+    .project{padding:24px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Katrina O'Rell</h1>
+    <p class="title">Product Developer · Founder, NovaCore Technologies</p>
+    <p class="intro">I design, build, and operate software products end to end — a live subscription training platform, fleet operations tooling, and educational software. Most of my work centers on helping people learn a skill or a job.</p>
+    <p class="header-links">
+      <a href="https://github.com/CyberStudyLabs">GitHub</a>
+      <a href="mailto:korell89@gmail.com">Email</a>
+    </p>
+  </div>
+</header>
+
+<section class="wrap" id="work">
+  <h2>Selected Work</h2>
+  <p class="section-note">Status labels reflect where each project actually stands.</p>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>CyberStudyLabs</h3>
+      <span class="status">Live · subscription</span>
+    </div>
+    <p>A training platform for CompTIA Security+ (SY0-701) preparation and SOC analyst readiness, serving individual subscribers, instructors, and schools.</p>
+    <ul class="highlights">
+      <li>25-chapter curriculum with 100 domain-tagged quiz questions, practice exams, flashcards, and a completion certificate — enough material to run a full bootcamp</li>
+      <li>Portfolio Builder where students produce real work samples: incident-response reports, playbooks, and triage logs, persisted to the cloud</li>
+      <li>Instructor dashboard with class codes, rosters, and per-student progress tracking, plus 13 printable student and instructor documents</li>
+      <li>Six-tier access model with live Stripe payments and webhook-driven tier management</li>
+    </ul>
+    <p class="stack">JavaScript · Supabase · Stripe · Vercel</p>
+    <p class="project-links"><a href="https://www.cyberstudylabs.com">Visit the platform</a></p>
+    <div class="shot shot-tall"><img src="images/csl.jpg" alt="CyberStudyLabs student dashboard showing chapter progress, exam scores, focus areas by Security+ domain, badges, and study modes"></div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>FleetPoint</h3>
+      <span class="status">Web platform complete · launch prep</span>
+    </div>
+    <p>A trucking operations platform that replaces the patchwork of separate tools carriers juggle — compliance, dispatch, safety, HR, maintenance, and training in one connected system. Born from my own daily work in fleet operations.</p>
+    <ul class="highlights">
+      <li>Seven integrated modules covering DQ files and Clearinghouse compliance, dispatch and load management, BOL/EDI, ELD/GPS, fleet maintenance, and CDL driver training</li>
+      <li>Role-based access with stackable module toggles — each company configures exactly what every person can see and do</li>
+      <li>Complete web platform across eight distinct roles, from dispatcher to compliance coordinator to platform IT — frontend and backend finished; mobile driver app in development</li>
+      <li>Accepted into the Samsara Technology Partnership Program — ELD/GPS integration in development, with Mapbox truck routing and FMCSA Clearinghouse on the roadmap</li>
+    </ul>
+    <p class="stack">React · Vite · Supabase · Vercel</p>
+    <p class="project-links"><a href="https://fleetpoint.vercel.app">View the platform</a></p>
+    <div class="shot-pair">
+      <div class="shot"><img src="images/fleetpoint-learndot.jpg" alt="FleetPoint LearnDOT module: safety training course library with assignments and completion tracking"></div>
+      <div class="shot"><img src="images/fleetpoint-reports.jpg" alt="FleetPoint compliance reports: DQ files, Clearinghouse, drug testing, and vehicle compliance report generation"></div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>Fleet Board</h3>
+      <span class="status">Internal tool · in daily use</span>
+    </div>
+    <p>A zero-install fleet maintenance dashboard that replaces the daily ritual of exporting CSVs from inspection platforms and merging them by hand. A single HTML file — no server, no install, no data leaving the machine — that ingests raw platform exports and renders a live operations board.</p>
+    <p><em>My role: product design, domain modeling, specification, and daily iteration against real data; implementation through AI-assisted development.</em></p>
+    <ul class="highlights">
+      <li>Custom CSV parser that flattens a stacked multi-header export format covering 78 different form schemas in a single file</li>
+      <li>Work-order pipeline with automatic aging alerts, plus a cross-referenced repair tracker that matches failed inspections to work orders and flags the ones that never got one</li>
+      <li>Status-agnostic pipeline cards that adapt to any company's custom workflow names; day-over-day trend deltas via snapshot persistence</li>
+      <li>The no-dependency, no-backend constraint was the design requirement — built for locked-down workplace machines</li>
+    </ul>
+    <p class="stack">JavaScript · HTML/CSS · localStorage</p>
+    <div class="shot" style="aspect-ratio:auto"><img src="images/fleetboard.jpg" alt="Fleet Board dashboard: PM completion tracking and work-order pipeline cards with automatic aging alerts"></div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>CodeWorld</h3>
+      <span class="status">Prototype · in development</span>
+    </div>
+    <p>A gamified coding platform for ages 10–14 that teaches real code — Python, then HTML/CSS, then JavaScript — not drag-and-drop puzzle pieces. Students finish by building a four-page interactive web app of their own.</p>
+    <ul class="highlights">
+      <li>14-chapter curriculum with three "Mini Boss" checkpoint challenges; every chapter project feeds into the final capstone, so nothing kids build is throwaway</li>
+      <li>Deliberate scaffolding progression: drag-and-drop pieces through guided typing to fully independent coding, with kid-friendly error names mapped to real Python errors</li>
+      <li>Themed "Worlds" (animal sanctuary, superhero HQ, and more) and a guide character, Vari, who evolves alongside the student</li>
+      <li>Built an SVG character rig with pose and expression controls for producing Vari's art — playtesting turned it into an in-game toy where kids pose Vari and export PNGs into their own projects, giving them free characters and the game organic brand reach</li>
+      <li>Chapters 1–5 and the first Mini Boss are prototyped and playtested with kids</li>
+    </ul>
+    <p class="stack">React · Node.js</p>
+    <p class="project-links"><a href="https://code-world-iota.vercel.app">Prototype demo</a></p>
+    <div class="shot shot-tall"><img src="images/codeworld.jpg" alt="CodeWorld game builder: students choose between arcade, sorting, and quick-react game types, guided by Vari"></div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>The Village</h3>
+      <span class="status">Open source</span>
+    </div>
+    <p>A co-parenting coordination app built as my Harvard CS50x final project.</p>
+    <ul class="highlights">
+      <li>Group-based sharing: calendars, bill tracking, discussion board, file and photo sharing, private notes</li>
+      <li>Authentication, session management, and database schema implemented from scratch</li>
+      <li>Timestamped, append-only records — designed for families who may need documentation</li>
+      <li>Role support with group admins, plus password-protected group joining</li>
+    </ul>
+    <p class="stack">Python · Flask · SQLite · Jinja2 · Bootstrap</p>
+    <p class="project-links">
+      <a href="https://katrinaorell.pythonanywhere.com">Live app</a>
+      <a href="https://github.com/CyberStudyLabs/the-village">Source code</a>
+      <a href="https://youtu.be/nqGQe-OO4_0">Video demo</a>
+    </p>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <h3>Anu's Indian Bar &amp; Grill</h3>
+      <span class="status">Client-style build</span>
+    </div>
+    <p>A single-page restaurant website designed as an unsolicited proposal for an Indian bar and grill in Humble, TX.</p>
+    <ul class="highlights">
+      <li>Tabbed, categorized menu system (popular dishes, vegetarian, meats, kebabs) built in vanilla JavaScript</li>
+      <li>Custom typographic design pairing serif display faces with a clean sans, plus online ordering and location/contact sections</li>
+      <li>Lightweight single-file build — no frameworks, fast load</li>
+    </ul>
+    <p class="stack">HTML · CSS · JavaScript</p>
+    <div class="shot shot-tall"><img src="images/restaurant.jpg" alt="Anu's Indian Bar and Grill homepage hero with gold serif typography on a deep brown background"></div>
+  </article>
+</section>
+
+<section class="wrap" id="about" style="padding-top:0">
+  <h2>About</h2>
+  <p class="section-note"></p>
+  <div class="about-card">
+    <p>I started building software to solve problems in front of me: training materials I wished existed, and reporting work in fleet operations that consumed hours of my day. Those projects grew into NovaCore Technologies, the company through which I develop and operate my products.</p>
+    <p>A consistent theme across my work is education — training SOC analysts, teaching kids to program, helping new CDL drivers with compliance. I'm currently designing a caregiver-support platform for families managing dementia.</p>
+  <p>On how I work: I build with AI-assisted development. The product design, domain knowledge, architecture decisions, and iteration are mine; AI accelerates the implementation. The Village, my CS50 final project, was hand-coded from scratch and reflects my grounding in the fundamentals underneath.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Katrina O'Rell · NovaCore Technologies</span>
+    <span><a href="mailto:korell89@gmail.com">korell89@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
