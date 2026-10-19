@@ -160,7 +160,7 @@
     <p class="glance-label">At a glance — click any project to jump to it</p>
     <a href="#csl"><strong>CyberStudyLabs</strong><span class="g-status">Live · subscription</span><span class="g-desc">CompTIA Delivery Partner — Security+ exam prep and SOC analyst training</span></a>
     <a href="#corvia"><strong>Corvia</strong><span class="g-status">Live</span><span class="g-desc">Trucking operations platform with a native driver app in both app stores</span></a>
-    <a href="#fleetboard"><strong>Fleet Board &amp; HOS Board</strong><span class="g-status">In daily use</span><span class="g-desc">Zero-install dashboards that eliminated two daily manual reporting tasks</span></a>
+    <a href="#maintenance"><strong>Maintenance Ops</strong><span class="g-status">In daily use</span><span class="g-desc">Live Whip Around API dashboard that replaced four daily manual reports</span></a>
     <a href="#dispatch"><strong>Dispatch Operations Platform</strong><span class="g-status">In development</span><span class="g-desc">Replacing a dispatch department's Excel workbook with a permissioned, audited system</span></a>
     <a href="#codeworld"><strong>CodeWorld</strong><span class="g-status">Prototype</span><span class="g-desc">Game that teaches kids real Python</span></a>
     <a href="#village"><strong>The Village</strong><span class="g-status">Open source</span><span class="g-desc">Co-parenting app — hand-coded CS50 project</span></a>
@@ -212,26 +212,31 @@
     </div></div>
   </article>
 
-  <article class="project" id="fleetboard">
+  <article class="project" id="maintenance">
     <div class="project-body">
 
     <div class="project-head">
-      <h3>Fleet Board &amp; HOS Board</h3>
+      <h3>Maintenance Ops</h3>
       <span class="status">Internal tool · in daily use</span>
     </div>
-    <p>A zero-install fleet maintenance dashboard that replaces the manual process of exporting CSVs from inspection platforms like Whip Around and merging them by hand. A single HTML file — no server, no install, no data leaving the machine — that ingests raw platform exports and renders a live operations board.</p>
-    <p><em>My role: product design, domain modeling, specification, and daily iteration against real data.</em></p>
+    <p>A zero-install fleet maintenance platform that pulls live from the Whip Around API and refreshes hourly. It replaced four manual morning reports and about 30 minutes of daily work, and unlike a morning report, it stays current all day. A single HTML file: no server, no install, no data leaving the machine.</p>
+    <p><em>My role: product design, domain modeling, specification, vendor coordination, and validation against real data.</em></p>
     <ul class="highlights">
-      <li>Custom CSV parser that flattens a stacked multi-header export format covering 78 different form schemas in a single file</li>
-      <li>Work-order pipeline with automatic aging alerts, plus a cross-referenced repair tracker that matches failed inspections to work orders and flags the ones that never got one</li>
-      <li>Status-agnostic pipeline cards that adapt to any company's custom workflow names; day-over-day trend deltas via snapshot persistence</li>
-      <li>The no-dependency, no-backend constraint was the design requirement — built for locked-down workplace machines</li>
-      <li>Companion tool, HOS Board, merges driver hours-of-service reports from two separate systems (Samsara and Alijex) for morning distribution — cut a 20–30 minute daily task to 5 minutes</li>
-      <li>Next step in development: direct Whip Around API integration (access granted) to replace the CSV export step entirely</li>
+      <li>Live API integration, built after I identified gaps in the vendor's API (work-order creation dates, custom statuses, inspection form names) and got the missing fields added</li>
+      <li>Work-order pipeline with aging alerts, plus a cross-check that flags failed PMs that never got a work order</li>
+      <li>Quarterly PM tracking for company units and customer equipment, plus annual inspection and registration expirations for every asset</li>
+      <li>Daily DVIR exception tracking: missed truck and trailer inspections, failed inspections that weren't reported to maintenance, and late closes, with a valid / resolved / pending / disregard call on each</li>
+      <li>Rolling seven-day start-of-shift inspection grid for yard equipment, with out-of-service tracking</li>
+      <li>On-demand reports and a one-click email summary, generated from live data instead of a stale morning snapshot</li>
+      <li>Validated in a parallel run against the manual reports before switching over; API key stored only on the user's machine</li>
+      <li>Next step: combining with the Dispatch Operations Platform into one operations system</li>
     </ul>
-    <p class="stack">JavaScript · HTML/CSS · localStorage</p>
+    <p class="stack">JavaScript · HTML/CSS · REST API · localStorage</p>
     </div>
-    <div class="project-media"><div class="shot" style="aspect-ratio:auto"><img src="images/fleetboard.jpg" alt="Fleet Board dashboard: PM completion tracking and work-order pipeline cards with automatic aging alerts"></div></div>
+    <div class="project-media"><div class="shot-pair">
+      <div class="shot"><img src="images/maintenance-ops-demo.jpg" alt="Maintenance Ops summary: open work orders by status and age, PM completion, failed PMs with no work order, and DVIR inspection exceptions, refreshed hourly"></div>
+      <div class="shot"><img src="images/maintenance-ops-dvir-demo.jpg" alt="Maintenance Ops DVIR exceptions: missing trailer inspections, failed inspections with reported-to-maintenance status, late closes, and a seven-day yard equipment inspection grid"></div>
+    </div></div>
   </article>
 
   <article class="project" id="dispatch">
@@ -248,6 +253,7 @@
       <li>Audit trail writing an entry per save, replacing a workbook with no change history</li>
       <li>Driver roster with carrier assignment, HOS clocks, seven-day violation tracking from Samsara, and conflict detection; load reports imported from Aljex</li>
       <li>Onboarding and recruiting pipeline — new-driver review queue, paperwork tracking, and the follow-up items that outlast onboarding</li>
+      <li>Absorbed the earlier HOS Board, which merges hours-of-service reports from Samsara and Aljex and cut a 20–30 minute daily task to 5 minutes</li>
       <li>Delivery exception tracking plus reporting filterable by date range and carrier</li>
       <li>Account and access management covering non-driver staff alongside the driver roster</li>
       <li>Consolidates dispatch, HOS, onboarding, and compliance into one board so every department works from the same information</li>
